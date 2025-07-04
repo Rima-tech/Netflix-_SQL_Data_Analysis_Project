@@ -35,12 +35,12 @@ FROM (
     GROUP BY type, rating
 ) AS rank_table
 WHERE Ranking = 1;
-
+```
 -- Q3 List All Movies Released in a Specific Year (e.g., 2020)
 ```sql
 SELECT * FROM Netflix 
 WHERE release_year =2020;
-
+```
 -- Q4 Find the Top 5 Countries with the Most Content on Netflix
 ```sql
 SELECT TOP 5 
@@ -51,7 +51,7 @@ CROSS APPLY STRING_SPLIT(country, ',') AS split_country
 WHERE country IS NOT NULL
 GROUP BY LTRIM(RTRIM(split_country.value))
 ORDER BY total_count DESC;
-
+```
 -- Q5 (a) Find Out  the  Longest Movie
 ```sql
 SELECT * 
@@ -60,7 +60,7 @@ WHERE
 type='Movie'
 AND
 duration=(SELECT MAX(duration) FROM Netflix);
-
+```
 -- Q5 (b) Find out the TV show with largest seasons
 ```sql
 WITH TV_Seasons AS(
@@ -74,7 +74,7 @@ FROM TV_Seasons
 WHERE  Season_Count= (SELECT MAX(Season_Count) FROM TV_Seasons);
 
 
-
+```
 -- Q6 Find Content Added in the Last 5 Years
 ```sql
 SELECT *
@@ -82,7 +82,7 @@ FROM Netflix
 WHERE date_added IS NOT NULL
 AND
 TRY_CAST(date_added as DATE)>= DATEADD(year, -5, GETdate());
-
+```
 -- Q7 Find TVShows Added in last 3 years
 ```sql
 SELECT *
@@ -92,14 +92,14 @@ AND
 type='TV Show'
 AND
 TRY_CAST(date_added as DATE)>= DATEADD(year, -5, GETdate());
-
+```
 -- Q 8 Find All Movies/TV Shows by Specific Director Name( eg. Brett Haley)
 ```sql
 SELECT * 
 FROM Netflix
 WHERE director LIKE '%Brett Haley%';
 
-
+```
 --Q 9 List All TV Shows with More Than 5 Seasons
 ```sql
 SELECT type,title,duration
@@ -107,7 +107,7 @@ FROM Netflix
 where type='TV Show'
 AND 
 CAST (LEFT(duration,CHARINDEX(' ',duration)-1) as INT) =5 ;
-
+```
 --Q 10 Count the Number of Content Items in Each Genre
 ```sql
 SELECT 
@@ -118,7 +118,7 @@ CROSS APPLY STRING_SPLIT(listed_in, ',') as split_Genre
 WHERE listed_in IS NOT NULL
 GROUP BY LTRIM(RTRIM(split_Genre.value)) 
 ORDER BY total_count DESC
-
+```
 -- Q 11.Find the average numbers of content produced in India each Year
 ```sql
  SELECT AVG(Total_yearly_content) as AVG_no_of_content_per_year
@@ -127,20 +127,20 @@ ORDER BY total_count DESC
 FROM Netflix
 WHERE country LIKE '%India%'
 GROUP by release_year ) as Yearly_data
-
+```
 --Q 12. List All TV show that are listed as Kids' TV
 ```sql
 
 SELECT * FROM Netflix
 WHERE listed_in LIKE '%Kids'' TV%';
-
+```
 --Q 13. Find the title , country , rating , duration,cast of the movies where Movies Actor 'Salman Khan' Appeared in the Last 10 Years
 ```sql
 SELECT title, country,rating, duration ,cast
 FROM Netflix 
 Where cast LIKE '%Salman Khan%'
 AND release_year >YEAR(GETDATE()) -10;
-
+```
 --Q 14 Find the Top 10 Actors Who Have Appeared in the Highest Number of Movies Produced in India
 ```sql
 SELECT TOP 10
@@ -152,14 +152,14 @@ CROSS APPLY STRING_SPLIT( cast , ',') as split_cast
 WHERE cast is NOT NULL and country LIKE '%India%'
 GROUP BY split_cast.value
 ORDER BY total_count DESC ;
-
+```
 --Q 15 FIND OUT the number of CRIME TV SHOWS released in 2020
 ```sql
 SELECT  COUNT(*) as Number_OF_CRIME_TV_SHOWS_In_2020
 FROM Netflix
 where listed_in like '%Crime%'
 
-
+```
 --Q 16  Categorize Content Based on the Presence of 'Kill' and 'Violence' Keywords .
 ```sql
 SELECT 
@@ -176,3 +176,4 @@ GROUP BY
         ELSE 'Positive'
     END;
 
+```
