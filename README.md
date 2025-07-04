@@ -192,7 +192,7 @@ This project offers meaningful insights into Netflix’s global content library,
 
 -Anupam Kher, Om Puri, and Shah Rukh Khan are among the most featured Indian actors, reinforcing their bankability and audience appeal.
 
--Majority of content is categorized as 'Positive' (8465 items) with only a small portion (342) containing violent or disturbing themes, reflecting a broadly family-friendly positioning.
+-Majority of content is categorized as 'Positive' (8465 items) with only a small portion (342) containing violent or disturbing themes , indicating a broader focus on general entertainment over darker or aggressive narratives.
 
 These findings provide valuable direction for content strategists, marketers, and production planners aiming to align with audience preferences, regional growth opportunities, and genre diversification strategies.
 
