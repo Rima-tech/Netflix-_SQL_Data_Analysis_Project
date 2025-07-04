@@ -6,10 +6,10 @@ This project involves analyzing the Netflix Movies and TV Shows dataset from Kag
 
 ### OBJECTIVE
 The primary objective of this project is to leverage SQL to perform exploratory data analysis on the Netflix dataset, answering specific business questions to gain insights into content trends and characteristics. The queries aim to:
--Analyze the distribution of movies versus TV shows.
--Identify key metrics such as common ratings, top content-producing countries, and longest-running movies or TV shows.
--Filter content based on specific criteria like release year, director, actor, or genre.
--Explore and categorize content based on specific criteria and keywords.
+- Analyze the distribution of movies versus TV shows.
+- Identify key metrics such as common ratings, top content-producing countries, and longest-running movies or TV shows.
+- Filter content based on specific criteria like release year, director, actor, or genre.
+- Explore and categorize content based on specific criteria and keywords.
 
 ### Dataset-
 The data for this project is sourced from the Kaggle dataset.
