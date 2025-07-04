@@ -23,7 +23,8 @@ SELECT type,
 Count (*) as total_number
 FROM Netflix
 GROUP BY type ;
-
+```
+![Output1][]
 --Q2.Find the Most Common Rating for Movies and TV Shows
 ```sql
 SELECT type, rating
@@ -177,3 +178,23 @@ GROUP BY
     END;
 
 ```
+### Business Implication
+This project offers meaningful insights into Netflix’s global content library, helping businesses understand content trends, regional preferences, and thematic patterns:
+
+-Movies dominate Netflix’s catalog, accounting for over 69% of all content, indicating the platform's focus on standalone viewing experiences.
+
+-TV-MA is the most common rating for both Movies and TV Shows, showing Netflix’s strong emphasis on mature, adult-oriented content.
+
+-The United States leads content production, followed by India and the UK — suggesting Netflix's strategic investment in English-speaking regions and emerging markets like India.
+
+-India contributes an average of 18 titles per year, making it a consistent content hub, particularly for regional and Bollywood content.
+
+
+-Anupam Kher, Om Puri, and Shah Rukh Khan are among the most featured Indian actors, reinforcing their bankability and audience appeal.
+
+-Majority of content is categorized as 'Positive' (8465 items) with only a small portion (342) containing violent or disturbing themes, reflecting a broadly family-friendly positioning.
+
+These findings provide valuable direction for content strategists, marketers, and production planners aiming to align with audience preferences, regional growth opportunities, and genre diversification strategies.
+
+
+### Tool Used - Microsoft SQL Server Management Studio (SSMS)
